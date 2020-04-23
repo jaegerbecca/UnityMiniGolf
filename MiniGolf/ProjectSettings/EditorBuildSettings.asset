@@ -17,4 +17,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/hole3.unity
     guid: e91fe54572f5faa4999919904e8231de
+  - enabled: 1
+    path: Assets/Scenes/hole4.unity
+    guid: 1c5db9719fe3b174bb2e152b58ba185b
+  - enabled: 1
+    path: Assets/Scenes/hole5.unity
+    guid: 71f2c18303abda54faf8e4c34f531fd5
+  - enabled: 1
+    path: Assets/Scenes/hole6.unity
+    guid: a772f04da542e9541a91d2dd24ff9048
+  - enabled: 1
+    path: Assets/Scenes/hole7.unity
+    guid: e35738c9f3aa8934493961d7047c32ba
+  - enabled: 1
+    path: Assets/Scenes/hole8.unity
+    guid: ce0744140a5b8b445916c4d71944d5a6
+  - enabled: 1
+    path: Assets/Scenes/hole9.unity
+    guid: 4bbf9da1428b91e4086b755d2ce8c073
   m_configObjects: {}
