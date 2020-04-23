@@ -27,18 +27,19 @@ public class BallController : MonoBehaviour
         }
 
         MainCamera.GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity;
+
+        Debug.Log(GetComponent<Rigidbody>().velocity);
     }
 
     private void OnMouseDrag()
     {
         zForce += 10;
-        Debug.Log(zForce);
     }
 
     private void OnMouseUp()
     {
         GetComponent<Rigidbody>().AddRelativeForce(0, 0, zForce);
-
+        StartCoroutine(stopball());
     }
 
     private void OnTriggerEnter(Collider collider)
@@ -47,5 +48,16 @@ public class BallController : MonoBehaviour
         {
             SceneManager.LoadScene("hole2");
         }
+    }
+
+    IEnumerator stopball()
+    {
+        yield return new WaitForSeconds(5);
+        GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        transform.localEulerAngles = new Vector3(0, 0, 0);
+        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        zForce = 0;
+
     }
 }
