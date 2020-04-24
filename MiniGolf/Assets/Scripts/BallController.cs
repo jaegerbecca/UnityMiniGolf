@@ -35,8 +35,6 @@ public class BallController : MonoBehaviour
 		
 
         MainCamera.GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity;
-
-        Debug.Log(GetComponent<Rigidbody>().velocity.z);
     }
 
     private void OnMouseDrag()
@@ -58,6 +56,19 @@ public class BallController : MonoBehaviour
         {
             SceneManager.LoadScene("hole2");
         }
+        else if (collider.name == "cup2")
+        {
+            
+            SceneManager.LoadScene("hole3");
+        }
+        else if (collider.name == "cup3")
+        {
+            SceneManager.LoadScene("hole4");
+        }
+        else if (collider.name == "cup4")
+        {
+            SceneManager.LoadScene("hole5");
+        }
     }
 
     IEnumerator stopball()
@@ -75,6 +86,6 @@ public class BallController : MonoBehaviour
 	
 	void OnGUI()
     {
-        GUI.Box(new Rect((Screen.width / 2) - Screen.width / 10, 0, Screen.width / 5, Screen.height / 12), "zForce: " + zForce);
+        GUI.Box(new Rect((Screen.width / 2) - Screen.width / 20, Screen.height / 1.1f, Screen.width / 10, Screen.height / 15), "Power: " + zForce);
     }
 }
