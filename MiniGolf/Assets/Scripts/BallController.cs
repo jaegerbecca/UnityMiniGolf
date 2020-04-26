@@ -29,25 +29,121 @@ public class BallController : MonoBehaviour
         {
             transform.Rotate(0, 1, 0);
         }
-		
-		arrowHead.GetComponent<MeshRenderer>().enabled = zForce == 0 ? true : false;
+        if (Input.GetKey("space"))
+        {
+            if (zForce < 2250)
+            {
+                zForce += 10;
+            }
+        }
+        if (Input.GetKeyUp("space"))
+        {
+            GameManager.hole1 += 1;
+            GameManager.strokes -= 1;
+            GetComponent<Rigidbody>().AddRelativeForce(0, 0, zForce);
+            StartCoroutine(stopball());
+        }
+
+        if (GameManager.strokes == 0)
+        {
+            if(SceneManager.GetActiveScene().name == "hole1")
+            {
+                SceneManager.LoadScene("hole2");
+            }
+            else if (SceneManager.GetActiveScene().name == "hole2")
+            {
+                SceneManager.LoadScene("hole3");
+            }
+            else if (SceneManager.GetActiveScene().name == "hole3")
+            {
+                SceneManager.LoadScene("hole4");
+            }
+            else if (SceneManager.GetActiveScene().name == "hole4")
+            {
+                SceneManager.LoadScene("hole5");
+            }
+            else if (SceneManager.GetActiveScene().name == "hole5")
+            {
+                SceneManager.LoadScene("hole6");
+            }
+            else if (SceneManager.GetActiveScene().name == "hole6")
+            {
+                SceneManager.LoadScene("hole7");
+            }
+            else if (SceneManager.GetActiveScene().name == "hole7")
+            {
+                SceneManager.LoadScene("hole8");
+            }
+            else if (SceneManager.GetActiveScene().name == "hole8")
+            {
+                SceneManager.LoadScene("hole9");
+            }
+        }
+
+        arrowHead.GetComponent<MeshRenderer>().enabled = zForce == 0 ? true : false;
 		arrowStem.GetComponent<MeshRenderer>().enabled = zForce == 0 ? true : false;
 		
 
         MainCamera.GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity;
     }
 
+
     private void OnMouseDrag()
     {
-		if (zForce < 2250) {
-			zForce += 10;
-		}
+        if (GetComponent<Rigidbody>().velocity.z == 0)
+        {
+            if (zForce < 2250) {
+			    zForce += 10;
+		    }
+        }
+		
     }
 
     private void OnMouseUp()
     {
-        GetComponent<Rigidbody>().AddRelativeForce(0, 0, zForce);
-        StartCoroutine(stopball());
+        if (GetComponent<Rigidbody>().velocity.z == 0)
+        {
+            if (SceneManager.GetActiveScene().name == "hole1")
+            {
+                GameManager.hole1 += 1;
+            }
+            else if (SceneManager.GetActiveScene().name == "hole2")
+            {
+                GameManager.hole2 += 1;
+            }
+            else if (SceneManager.GetActiveScene().name == "hole3")
+            {
+                GameManager.hole3 += 1;
+            }
+            else if (SceneManager.GetActiveScene().name == "hole4")
+            {
+                GameManager.hole4 += 1;
+            }
+            else if (SceneManager.GetActiveScene().name == "hole5")
+            {
+                GameManager.hole5 += 1;
+            }
+            else if (SceneManager.GetActiveScene().name == "hole6")
+            {
+                GameManager.hole6 += 1;
+            }
+            else if (SceneManager.GetActiveScene().name == "hole7")
+            {
+                GameManager.hole7 += 1;
+            }
+            else if (SceneManager.GetActiveScene().name == "hole8")
+            {
+                GameManager.hole8 += 1;
+            }
+            else if (SceneManager.GetActiveScene().name == "hole9")
+            {
+                GameManager.hole9 += 1;
+            }
+            GameManager.strokes -= 1;
+            GetComponent<Rigidbody>().AddRelativeForce(0, 0, zForce);
+            StartCoroutine(stopball());
+        }
+        
     }
 
     private void OnTriggerEnter(Collider collider)
@@ -57,8 +153,7 @@ public class BallController : MonoBehaviour
             SceneManager.LoadScene("hole2");
         }
         else if (collider.name == "cup2")
-        {
-            
+        {  
             SceneManager.LoadScene("hole3");
         }
         else if (collider.name == "cup3")
@@ -68,6 +163,22 @@ public class BallController : MonoBehaviour
         else if (collider.name == "cup4")
         {
             SceneManager.LoadScene("hole5");
+        }
+        else if (collider.name == "cup5")
+        {
+            SceneManager.LoadScene("hole6");
+        }
+        else if (collider.name == "cup6")
+        {
+            SceneManager.LoadScene("hole7");
+        }
+        else if (collider.name == "cup7")
+        {
+            SceneManager.LoadScene("hole8");
+        }
+        else if (collider.name == "cup8")
+        {
+            SceneManager.LoadScene("hole9");
         }
     }
 
