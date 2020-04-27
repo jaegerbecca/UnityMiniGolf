@@ -187,6 +187,7 @@ public class BallController : MonoBehaviour
             {
                 GameManager.hole9 += 1;
             }
+
             GameManager.strokes -= 1;
             GetComponent<Rigidbody>().AddRelativeForce(0, 0, zForce);
             StartCoroutine(stopball());
@@ -199,6 +200,52 @@ public class BallController : MonoBehaviour
         if (collider.name == "OutOfBounds")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+            if (SceneManager.GetActiveScene().name == "hole1")
+            {
+                GameManager.hole1 += 3;
+                GameManager.strokes -= 3;
+            }
+            else if (SceneManager.GetActiveScene().name == "hole2")
+            {
+                GameManager.hole2 += 3;
+                GameManager.strokes -= 3;
+            }
+            else if (SceneManager.GetActiveScene().name == "hole3")
+            {
+                GameManager.hole3 += 3;
+                GameManager.strokes -= 3;
+            }
+            else if (SceneManager.GetActiveScene().name == "hole4")
+            {
+                GameManager.hole4 += 3;
+                GameManager.strokes -= 3;
+            }
+            else if (SceneManager.GetActiveScene().name == "hole5")
+            {
+                GameManager.hole5 += 3;
+                GameManager.strokes -= 3;
+            }
+            else if (SceneManager.GetActiveScene().name == "hole6")
+            {
+                GameManager.hole6 += 3;
+                GameManager.strokes -= 3;
+            }
+            else if (SceneManager.GetActiveScene().name == "hole7")
+            {
+                GameManager.hole7 += 3;
+                GameManager.strokes -= 3;
+            }
+            else if (SceneManager.GetActiveScene().name == "hole8")
+            {
+                GameManager.hole8 += 3;
+                GameManager.strokes -= 3;
+            }
+            else if (SceneManager.GetActiveScene().name == "hole9")
+            {
+                GameManager.hole9 += 3;
+                GameManager.strokes -= 3;
+            }
         }
         if (collider.name == "cup1")
         {
