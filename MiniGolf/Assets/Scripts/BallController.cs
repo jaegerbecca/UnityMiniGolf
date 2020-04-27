@@ -196,6 +196,10 @@ public class BallController : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
+        if (collider.name == "OutOfBounds")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
         if (collider.name == "cup1")
         {
             SceneManager.LoadScene("hole2");
