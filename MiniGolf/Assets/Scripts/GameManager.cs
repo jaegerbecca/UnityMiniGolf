@@ -29,12 +29,15 @@ public class GameManager : MonoBehaviour {
         {
             case DifficultyManager.Difficulties.easy:
                 maxStrokes = 20;
+                strokes = 20;
                 break;
             case DifficultyManager.Difficulties.normal:
                 maxStrokes = 15;
+                strokes = 15;
                 break;
             case DifficultyManager.Difficulties.hard:
                 maxStrokes = 10;
+                strokes = 10;
                 break;
         }
     }
@@ -96,13 +99,13 @@ public class GameManager : MonoBehaviour {
             switch (DifficultyManager.Difficulty)
             {
                 case DifficultyManager.Difficulties.easy:
-                    par = 4;
+                    par = 5;
                     break;
                 case DifficultyManager.Difficulties.normal:
-                    par = 3;
+                    par = 4;
                     break;
                 case DifficultyManager.Difficulties.hard:
-                    par = 2;
+                    par = 3;
                     break;
             }
         }
@@ -112,13 +115,13 @@ public class GameManager : MonoBehaviour {
             switch (DifficultyManager.Difficulty)
             {
                 case DifficultyManager.Difficulties.easy:
-                    par = 4;
+                    par = 5;
                     break;
                 case DifficultyManager.Difficulties.normal:
-                    par = 3;
+                    par = 4;
                     break;
                 case DifficultyManager.Difficulties.hard:
-                    par = 2;
+                    par = 3;
                     break;
             }
         }
@@ -144,13 +147,13 @@ public class GameManager : MonoBehaviour {
             switch (DifficultyManager.Difficulty)
             {
                 case DifficultyManager.Difficulties.easy:
-                    par = 4;
+                    par = 5;
                     break;
                 case DifficultyManager.Difficulties.normal:
-                    par = 3;
+                    par = 4;
                     break;
                 case DifficultyManager.Difficulties.hard:
-                    par = 2;
+                    par = 3;
                     break;
             }
         }
@@ -176,13 +179,13 @@ public class GameManager : MonoBehaviour {
             switch (DifficultyManager.Difficulty)
             {
                 case DifficultyManager.Difficulties.easy:
-                    par = 4;
+                    par = 5;
                     break;
                 case DifficultyManager.Difficulties.normal:
-                    par = 3;
+                    par = 4;
                     break;
                 case DifficultyManager.Difficulties.hard:
-                    par = 2;
+                    par = 3;
                     break;
             }
         }

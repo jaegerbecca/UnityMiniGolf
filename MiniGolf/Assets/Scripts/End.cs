@@ -35,37 +35,37 @@ public class End : MonoBehaviour
                     hole1Par.GetComponent<TMPro.TextMeshProUGUI>().text = "4";
 					hole2Par.GetComponent<TMPro.TextMeshProUGUI>().text = "4";
 					hole3Par.GetComponent<TMPro.TextMeshProUGUI>().text = "4";
-					hole4Par.GetComponent<TMPro.TextMeshProUGUI>().text = "4";
-					hole5Par.GetComponent<TMPro.TextMeshProUGUI>().text = "4";
+					hole4Par.GetComponent<TMPro.TextMeshProUGUI>().text = "5";
+					hole5Par.GetComponent<TMPro.TextMeshProUGUI>().text = "5";
 					hole6Par.GetComponent<TMPro.TextMeshProUGUI>().text = "4";
-					hole7Par.GetComponent<TMPro.TextMeshProUGUI>().text = "4";
+					hole7Par.GetComponent<TMPro.TextMeshProUGUI>().text = "5";
 					hole8Par.GetComponent<TMPro.TextMeshProUGUI>().text = "4";
-					hole9Par.GetComponent<TMPro.TextMeshProUGUI>().text = "4";
-					totalPar.GetComponent<TMPro.TextMeshProUGUI>().text = "36";
+					hole9Par.GetComponent<TMPro.TextMeshProUGUI>().text = "5";
+					totalPar.GetComponent<TMPro.TextMeshProUGUI>().text = "40";
                     break;
                 case DifficultyManager.Difficulties.normal:
                     hole1Par.GetComponent<TMPro.TextMeshProUGUI>().text = "3";
 					hole2Par.GetComponent<TMPro.TextMeshProUGUI>().text = "3";
 					hole3Par.GetComponent<TMPro.TextMeshProUGUI>().text = "3";
-					hole4Par.GetComponent<TMPro.TextMeshProUGUI>().text = "3";
-					hole5Par.GetComponent<TMPro.TextMeshProUGUI>().text = "3";
+					hole4Par.GetComponent<TMPro.TextMeshProUGUI>().text = "4";
+					hole5Par.GetComponent<TMPro.TextMeshProUGUI>().text = "4";
 					hole6Par.GetComponent<TMPro.TextMeshProUGUI>().text = "3";
-					hole7Par.GetComponent<TMPro.TextMeshProUGUI>().text = "3";
+					hole7Par.GetComponent<TMPro.TextMeshProUGUI>().text = "4";
 					hole8Par.GetComponent<TMPro.TextMeshProUGUI>().text = "3";
-					hole9Par.GetComponent<TMPro.TextMeshProUGUI>().text = "3";
-					totalPar.GetComponent<TMPro.TextMeshProUGUI>().text = "27";
+					hole9Par.GetComponent<TMPro.TextMeshProUGUI>().text = "4";
+					totalPar.GetComponent<TMPro.TextMeshProUGUI>().text = "31";
                     break;
                 case DifficultyManager.Difficulties.hard:
                     hole1Par.GetComponent<TMPro.TextMeshProUGUI>().text = "2";
 					hole2Par.GetComponent<TMPro.TextMeshProUGUI>().text = "2";
 					hole3Par.GetComponent<TMPro.TextMeshProUGUI>().text = "2";
-					hole4Par.GetComponent<TMPro.TextMeshProUGUI>().text = "2";
-					hole5Par.GetComponent<TMPro.TextMeshProUGUI>().text = "2";
+					hole4Par.GetComponent<TMPro.TextMeshProUGUI>().text = "3";
+					hole5Par.GetComponent<TMPro.TextMeshProUGUI>().text = "3";
 					hole6Par.GetComponent<TMPro.TextMeshProUGUI>().text = "2";
-					hole7Par.GetComponent<TMPro.TextMeshProUGUI>().text = "2";
+					hole7Par.GetComponent<TMPro.TextMeshProUGUI>().text = "3";
 					hole8Par.GetComponent<TMPro.TextMeshProUGUI>().text = "2";
-					hole9Par.GetComponent<TMPro.TextMeshProUGUI>().text = "2";
-					totalPar.GetComponent<TMPro.TextMeshProUGUI>().text = "18";
+					hole9Par.GetComponent<TMPro.TextMeshProUGUI>().text = "3";
+					totalPar.GetComponent<TMPro.TextMeshProUGUI>().text = "22";
                     break;
             }
 			
@@ -84,6 +84,15 @@ public class End : MonoBehaviour
 
     public void PlayGame()
     {
+        GameManager.hole1 = 0;
+        GameManager.hole2 = 0;
+        GameManager.hole3 = 0;
+        GameManager.hole4 = 0;
+        GameManager.hole5 = 0;
+        GameManager.hole6 = 0;
+        GameManager.hole7 = 0;
+        GameManager.hole8 = 0;
+        GameManager.hole9 = 0;
         SceneManager.LoadScene("hole1");
     }
 	

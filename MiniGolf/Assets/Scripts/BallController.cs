@@ -25,6 +25,14 @@ public class BallController : MonoBehaviour
         {
             transform.Rotate(0, -1, 0);
         }
+        if (Input.GetKey(KeyCode.RightArrow) && zForce == 0)
+        {
+            transform.Rotate(0, 1, 0);
+        }
+        if (Input.GetKey(KeyCode.LeftArrow) && zForce == 0)
+        {
+            transform.Rotate(0, -1, 0);
+        }
         if (Input.GetKey("d") && zForce == 0)
         {
             transform.Rotate(0, 1, 0);
