@@ -39,52 +39,58 @@ public class BallController : MonoBehaviour
         }
         if (Input.GetKey("space"))
         {
-            if (zForce < 2250)
+            if (GetComponent<Rigidbody>().velocity.z == 0)
             {
-                zForce += 10;
+                if (zForce < 2250)
+                {
+                    zForce += 10;
+                }
             }
         }
         if (Input.GetKeyUp("space"))
         {
-            if (SceneManager.GetActiveScene().name == "hole1")
+            if (GetComponent<Rigidbody>().velocity.z == 0)
             {
-                GameManager.hole1 += 1;
+                if (SceneManager.GetActiveScene().name == "hole1")
+                {
+                    GameManager.hole1 += 1;
+                }
+                else if (SceneManager.GetActiveScene().name == "hole2")
+                {
+                    GameManager.hole2 += 1;
+                }
+                else if (SceneManager.GetActiveScene().name == "hole3")
+                {
+                    GameManager.hole3 += 1;
+                }
+                else if (SceneManager.GetActiveScene().name == "hole4")
+                {
+                    GameManager.hole4 += 1;
+                }
+                else if (SceneManager.GetActiveScene().name == "hole5")
+                {
+                    GameManager.hole5 += 1;
+                }
+                else if (SceneManager.GetActiveScene().name == "hole6")
+                {
+                    GameManager.hole6 += 1;
+                }
+                else if (SceneManager.GetActiveScene().name == "hole7")
+                {
+                    GameManager.hole7 += 1;
+                }
+                else if (SceneManager.GetActiveScene().name == "hole8")
+                {
+                    GameManager.hole8 += 1;
+                }
+                else if (SceneManager.GetActiveScene().name == "hole9")
+                {
+                    GameManager.hole9 += 1;
+                }
+                GameManager.strokes -= 1;
+                GetComponent<Rigidbody>().AddRelativeForce(0, 0, zForce);
+                StartCoroutine(stopball());
             }
-            else if (SceneManager.GetActiveScene().name == "hole2")
-            {
-                GameManager.hole2 += 1;
-            }
-            else if (SceneManager.GetActiveScene().name == "hole3")
-            {
-                GameManager.hole3 += 1;
-            }
-            else if (SceneManager.GetActiveScene().name == "hole4")
-            {
-                GameManager.hole4 += 1;
-            }
-            else if (SceneManager.GetActiveScene().name == "hole5")
-            {
-                GameManager.hole5 += 1;
-            }
-            else if (SceneManager.GetActiveScene().name == "hole6")
-            {
-                GameManager.hole6 += 1;
-            }
-            else if (SceneManager.GetActiveScene().name == "hole7")
-            {
-                GameManager.hole7 += 1;
-            }
-            else if (SceneManager.GetActiveScene().name == "hole8")
-            {
-                GameManager.hole8 += 1;
-            }
-            else if (SceneManager.GetActiveScene().name == "hole9")
-            {
-                GameManager.hole9 += 1;
-            }
-            GameManager.strokes -= 1;
-            GetComponent<Rigidbody>().AddRelativeForce(0, 0, zForce);
-            StartCoroutine(stopball());
         }
 
         if (GameManager.strokes == 0)
