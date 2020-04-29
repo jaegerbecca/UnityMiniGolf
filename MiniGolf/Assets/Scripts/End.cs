@@ -80,6 +80,22 @@ public class End : MonoBehaviour
 		hole9Strokes.GetComponent<TMPro.TextMeshProUGUI>().text = GameManager.hole9.ToString();
 		totalStrokes.GetComponent<TMPro.TextMeshProUGUI>().text = (GameManager.hole1 + GameManager.hole2 + GameManager.hole3 + GameManager.hole4 + GameManager.hole5 +
 														   GameManager.hole6 + GameManager.hole7 + GameManager.hole8 + GameManager.hole9).ToString();
+
+        switch (DifficultyManager.Difficulty)
+        {
+            case DifficultyManager.Difficulties.easy:
+                GameManager.maxStrokes = 20;
+                GameManager.strokes = 20;
+                break;
+            case DifficultyManager.Difficulties.normal:
+                GameManager.maxStrokes = 15;
+                GameManager.strokes = 15;
+                break;
+            case DifficultyManager.Difficulties.hard:
+                GameManager.maxStrokes = 10;
+                GameManager.strokes = 10;
+                break;
+        }
     }
 
     public void PlayGame()
@@ -93,6 +109,7 @@ public class End : MonoBehaviour
         GameManager.hole7 = 0;
         GameManager.hole8 = 0;
         GameManager.hole9 = 0;
+       
         SceneManager.LoadScene("hole1");
     }
 	
