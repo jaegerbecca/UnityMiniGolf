@@ -37,6 +37,12 @@ public class BallController : MonoBehaviour
         {
             transform.Rotate(0, 1, 0);
         }
+        if (Input.GetKey("r") && zForce == 0)
+        {
+            transform.localEulerAngles = new Vector3(0, 0, 0);
+            MainCamera.transform.localPosition = new Vector3(0, 6, -8);
+            MainCamera.transform.localEulerAngles = new Vector3(25, 0, 0);
+        }
         if (Input.GetKey("space"))
         {
             if (GetComponent<Rigidbody>().velocity.z == 0)
