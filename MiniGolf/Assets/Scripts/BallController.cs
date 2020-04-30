@@ -23,19 +23,19 @@ public class BallController : MonoBehaviour
     {
         if (Input.GetKey("a") && zForce == 0)
         {
-            transform.Rotate(0, -1, 0);
+            transform.Rotate(0, -2, 0);
         }
         if (Input.GetKey(KeyCode.RightArrow) && zForce == 0)
         {
-            transform.Rotate(0, 1, 0);
+            transform.Rotate(0, 2, 0);
         }
         if (Input.GetKey(KeyCode.LeftArrow) && zForce == 0)
         {
-            transform.Rotate(0, -1, 0);
+            transform.Rotate(0, -2, 0);
         }
         if (Input.GetKey("d") && zForce == 0)
         {
-            transform.Rotate(0, 1, 0);
+            transform.Rotate(0, 2, 0);
         }
         if (Input.GetKey("r") && zForce == 0)
         {
@@ -49,7 +49,7 @@ public class BallController : MonoBehaviour
             {
                 if (zForce < 2250)
                 {
-                    zForce += 10;
+                    zForce += 25;
                 }
             }
         }
@@ -161,7 +161,7 @@ public class BallController : MonoBehaviour
         if (GetComponent<Rigidbody>().velocity.z == 0)
         {
             if (zForce < 2250) {
-			    zForce += 10;
+			    zForce += 25;
 		    }
         }
 		
